@@ -20,4 +20,9 @@ export class BorrowsController {
   async returnBook(@Param('borrowId') borrowId: number) {
     return this.borrowsService.returnBook(borrowId);
   }
+
+  @Get('')
+  async getBorrows() {
+    return this.borrowsService.getBorrows();
+  }
 }

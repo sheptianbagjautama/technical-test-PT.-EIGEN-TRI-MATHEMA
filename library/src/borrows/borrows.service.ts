@@ -99,4 +99,8 @@ export class BorrowsService {
 
         return 'Book returned successfully';
     }
+
+    async getBorrows(): Promise<Borrow[]> {
+        return this.borrowRepository.find({ relations: ['member', 'book'], });
+    }
 }
